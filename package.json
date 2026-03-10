@@ -1,0 +1,46 @@
+{
+  "name": "openclaw-iflow-plugin",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "esbuild index.ts --bundle --platform=node --target=node18 --format=cjs --outfile=dist/index.js --minify --external:openclaw --external:openclaw/plugin-sdk --external:@iflow-ai/iflow-cli-sdk",
+    "type-check": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "openclaw": {
+    "extensions": [
+      "./dist/index.js"
+    ]
+  },
+  "files": [
+    "dist/",
+    "openclaw.plugin.json",
+    "README.md"
+  ],
+  "dependencies": {
+    "@iflow-ai/iflow-cli-sdk": "latest"
+  },
+  "devDependencies": {
+    "esbuild": "^0.27.3",
+    "@sinclair/typebox": "^0.34.48",
+    "nanoid": "^3.3.7",
+    "typescript": "^5.0.0",
+    "vitest": "^2.0.0",
+    "@vitest/coverage-v8": "^2.0.0"
+  },
+  "keywords": [
+    "openclaw",
+    "plugin",
+    "iflow",
+    "ai",
+    "agent",
+    "automation",
+    "cli",
+    "background-process",
+    "developer-tools"
+  ],
+  "license": "MIT",
+  "description": "An OpenClaw plugin that orchestrates iFlow sessions as managed background processes. Launch, monitor, and control iFlow AI agents directly from your AI gateway."
+}

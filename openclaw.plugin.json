@@ -1,0 +1,50 @@
+{
+  "id": "openclaw-iflow-plugin",
+  "name": "iFlow Plugin",
+  "description": "Orchestrate iFlow sessions as managed background processes from any OpenClaw channel.",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "maxSessions": {
+        "type": "number",
+        "description": "Maximum concurrent iFlow sessions",
+        "default": 5
+      },
+      "fallbackChannel": {
+        "type": "string",
+        "description": "Default notification channel (e.g. telegram|my-bot|123456789)"
+      },
+      "agentChannels": {
+        "type": "object",
+        "description": "Map of workspace directories to notification channels"
+      },
+      "maxAutoResponds": {
+        "type": "number",
+        "description": "Max consecutive auto-responds before requiring user input",
+        "default": 10
+      },
+      "skipSafetyChecks": {
+        "type": "boolean",
+        "description": "Skip pre-launch safety checks (for dev/testing only)",
+        "default": false
+      },
+      "defaultWorkdir": {
+        "type": "string",
+        "description": "Default working directory for sessions"
+      },
+      "iflowTimeout": {
+        "type": "number",
+        "description": "Default iFlow session timeout in milliseconds",
+        "default": 300000
+      },
+      "permissionMode": {
+        "type": "string",
+        "enum": ["auto", "manual", "selective"],
+        "description": "Default permission mode for iFlow sessions",
+        "default": "auto"
+      }
+    }
+  }
+}
