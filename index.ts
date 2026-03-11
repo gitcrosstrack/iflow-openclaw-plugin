@@ -27,7 +27,7 @@ import {
 import { execFile } from "child_process";
 
 // Plugin register function — called by OpenClaw when loading the plugin
-export function register(api: any) {
+function register(api: any) {
   let sm: SessionManager | null = null;
   let nr: NotificationRouter | null = null;
   let cleanupInterval: ReturnType<typeof setInterval> | null = null;
@@ -168,3 +168,6 @@ export function register(api: any) {
     },
   });
 }
+
+// CommonJS export for OpenClaw compatibility
+module.exports = { register };
