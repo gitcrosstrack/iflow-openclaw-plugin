@@ -112,4 +112,10 @@ export interface PluginConfig {
    * Default: false.
    */
   skipSafetyChecks?: boolean;
+
+  /**
+   * Safety-net idle timeout in seconds. If iFlow produces no output for this
+   * duration, onWaitingForInput is fired. Default: 600.
+   */
+  safetyNetIdleSeconds?: number;
 }

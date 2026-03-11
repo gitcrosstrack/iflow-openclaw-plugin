@@ -53,7 +53,6 @@ export class Session {
   // Timers
   private idleTimer?: ReturnType<typeof setTimeout>;
   private safetyNetTimer?: ReturnType<typeof setTimeout>;
-  private static readonly SAFETY_NET_IDLE_MS = 15_000;
 
   // Event callbacks
   onOutput?: (text: string) => void;
@@ -281,14 +280,15 @@ export class Session {
 
   private resetSafetyNetTimer(): void {
     this.clearSafetyNetTimer();
+    const idleMs = (pluginConfig.safetyNetIdleSeconds ?? 600) * 1000;
     this.safetyNetTimer = setTimeout(() => {
       this.safetyNetTimer = undefined;
       if (this.status === "running" && this.onWaitingForInput && !this.waitingForInputFired) {
-        console.log(`[Session] ${this.id} no messages for ${Session.SAFETY_NET_IDLE_MS / 1000}s — firing onWaitingForInput (safety-net)`);
+        console.log(`[Session] ${this.id} no messages for ${idleMs / 1000}s — firing onWaitingForInput (safety-net)`);
         this.waitingForInputFired = true;
         this.onWaitingForInput(this);
       }
-    }, Session.SAFETY_NET_IDLE_MS);
+    }, idleMs);
   }
 
   private clearSafetyNetTimer(): void {

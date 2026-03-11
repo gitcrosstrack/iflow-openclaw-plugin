@@ -2,3 +2,4 @@ node_modules/
 dist/
 coverage/
 .aone_copilot/
+gobang/

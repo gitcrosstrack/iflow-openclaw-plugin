@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "esbuild index.ts --bundle --platform=node --target=node18 --format=cjs --outfile=dist/index.js --minify --external:openclaw --external:openclaw/plugin-sdk --external:@iflow-ai/iflow-cli-sdk",
+    "debug": "npx esbuild debug/server.ts --bundle --platform=node --target=node18 --format=cjs --outfile=debug/server.js --external:@iflow-ai/iflow-cli-sdk --external:nanoid && node debug/server.js",
     "type-check": "tsc --noEmit",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage"
