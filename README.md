@@ -4,6 +4,8 @@ Orchestrate iFlow sessions as managed background processes from any OpenClaw cha
 
 Launch, monitor, and interact with multiple iFlow sessions directly from DingTalk, or any OpenClaw-supported platform — without leaving your chat interface.
 
+> **Acknowledgement**: This plugin is inspired by and based on [openclaw-claude-code-plugin](https://github.com/alizarion/openclaw-claude-code-plugin) by [@alizarion](https://github.com/alizarion). The architecture, session management model, and foreground/background design are adapted from that project, with iFlow SDK replacing the Claude Code SDK as the underlying AI engine.
+
 ---
 
 ## Quick Start
