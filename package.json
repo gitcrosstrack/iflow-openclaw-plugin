@@ -1,6 +1,6 @@
 {
   "name": "@gitcrosstrack/iflow-openclaw-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "commonjs",
   "main": "dist/index.js",
   "scripts": {
@@ -17,6 +17,7 @@
   },
   "files": [
     "dist/",
+    "skills/",
     "openclaw.plugin.json",
     "README.md"
   ],
