@@ -17,10 +17,19 @@ openclaw plugins install @soimy/dingtalk
 openclaw gateway restart
 ```
 
-### 2. Install this plugin (local)
+### 2. Install this plugin
+
+**Option A — Install from GitHub (recommended)**
 
 ```bash
-git clone <this-repo>
+openclaw plugins install github:gitcrosstrack/iflow-openclaw-plugin
+openclaw gateway restart
+```
+
+**Option B — Install locally (for development)**
+
+```bash
+git clone https://github.com/gitcrosstrack/iflow-openclaw-plugin.git
 cd iflow-openclaw-plugin
 npm install
 npm run build
@@ -158,6 +167,7 @@ Set values in `~/.openclaw/openclaw.json` under `plugins.entries["openclaw-iflow
 | `iflowTimeout` | `number` | `300000` | Default iFlow session timeout in milliseconds |
 | `permissionMode` | `string` | `"auto"` | `"auto"` / `"manual"` / `"selective"` |
 | `skipSafetyChecks` | `boolean` | `false` | Skip pre-launch safety guards (for dev/testing only) |
+| `safetyNetIdleSeconds` | `number` | `600` | Seconds of no output before session is considered waiting for input |
 
 ### Example
 
