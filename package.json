@@ -1,5 +1,5 @@
 {
-  "name": "openclaw-iflow-plugin",
+  "name": "@gitcrosstrack/iflow-openclaw-plugin",
   "version": "1.0.0",
   "type": "commonjs",
   "main": "dist/index.js",
@@ -24,12 +24,12 @@
     "@iflow-ai/iflow-cli-sdk": "latest"
   },
   "devDependencies": {
-    "esbuild": "^0.27.3",
     "@sinclair/typebox": "^0.34.48",
+    "@vitest/coverage-v8": "^2.0.0",
+    "esbuild": "^0.27.3",
     "nanoid": "^3.3.7",
     "typescript": "^5.0.0",
-    "vitest": "^2.0.0",
-    "@vitest/coverage-v8": "^2.0.0"
+    "vitest": "^2.0.0"
   },
   "keywords": [
     "openclaw",
